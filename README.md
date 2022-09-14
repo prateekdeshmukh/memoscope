@@ -1,5 +1,5 @@
 # memoscope
-This is clone of https://github.com/fremag/MemoScope.Net and all credit goes to its developer
+# This is clone of https://github.com/fremag/MemoScope.Net and all credit goes to its contributers
 
 
 
@@ -21,8 +21,6 @@ MemoScope.Net will analyze the data and help you to find **memory leaks** and **
 
 Thanks to [Lee Culver](https://github.com/leculver) for his [ClrMd](https://github.com/Microsoft/clrmd) library, without it, MemoScope.Net would not exist.
 
-## Install
-Get binaries from AppVeyor: [x86](https://ci.appveyor.com/api/projects/fremag/memoscope-net/artifacts/MemoScope_x86_Release.zip?job=Configuration%3A%20Release%3B%20Platform%3A%20x86) [x64](https://ci.appveyor.com/api/projects/fremag/memoscope-net/artifacts/MemoScope_x64_Release.zip?job=Configuration%3A%20Release%3B%20Platform%3A%20x64)
 
 # Use cases
 ## Out of Memory
