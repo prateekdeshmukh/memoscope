@@ -1,0 +1,833 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D6AD45CF-3691-4A6F-8AA0-28FEA3B87BFB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MemoScope</RootNamespace>
+    <AssemblyName>MemoScope</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publier\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>memoscope_logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExpressionEvaluator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=90d9f15d622e2348, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExpressionEvaluator.2.0.4.0\lib\net40\ExpressionEvaluator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Diagnostics.Runtime, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Diagnostics.Runtime.1.0.5\lib\net45\Microsoft.Diagnostics.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.4\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectListView.Official.2.9.1\lib\net20\ObjectListView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ParallelExtensionsExtras, Version=1.2.3.0, Culture=neutral, PublicKeyToken=665f4d61f853b5a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\ParallelExtensionsExtras.1.2.0.0\lib\net40\ParallelExtensionsExtras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ScintillaNET, Version=3.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jacobslusser.ScintillaNET.3.6.3\lib\net40\ScintillaNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.111.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.111.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.111.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=3.0.6.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\packages\DockPanelSuite.3.0.6\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="WinFwk, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\fremag.WinFwk.1.0.7\lib\net461\WinFwk.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Bookmarks\BookmarkMgr.cs" />
+    <Compile Include="Core\Cache\ClrDumpCache.cs" />
+    <Compile Include="Core\Cache\paramInstanceAddress.cs" />
+    <Compile Include="Core\Cache\SqliteHelper.cs" />
+    <Compile Include="Core\ClrTypeError.cs" />
+    <Compile Include="Core\Data\AddressContainerList.cs" />
+    <Compile Include="Core\Data\ArrayElementsAddressContainer.cs" />
+    <Compile Include="Core\Data\ClrDumpThread.cs" />
+    <Compile Include="Core\Data\SelectedClrDumpObjectMessage.cs" />
+    <Compile Include="Core\Data\TypeInstancesAddressList.cs" />
+    <Compile Include="Core\Data\ITypeNameData.cs" />
+    <Compile Include="Core\Data\SimpleValueHelper.cs" />
+    <Compile Include="Core\IClrDump.cs" />
+    <Compile Include="Core\ProcessInfo\ProcessInfo.cs" />
+    <Compile Include="Core\ProcessInfo\ClrDumpInfo.cs" />
+    <Compile Include="Modules\ArrayInstances\ArrayInstanceAnalysis.cs" />
+    <Compile Include="Modules\ArrayInstances\ArrayInstancesCommand.cs" />
+    <Compile Include="Modules\ArrayInstances\ArrayInstancesInformation.cs" />
+    <Compile Include="Modules\ArrayInstances\ArrayInstancesModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ArrayInstances\ArrayInstancesModule.Designer.cs">
+      <DependentUpon>ArrayInstancesModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Arrays\ArraysAddressList.cs" />
+    <Compile Include="Modules\BlockingObjects\BlockingObjectsCommand.cs" />
+    <Compile Include="Modules\BlockingObjects\BlockingObjectInformation.cs" />
+    <Compile Include="Modules\BlockingObjects\BlockingObjectsModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\BlockingObjects\BlockingObjectsModule.Designer.cs">
+      <DependentUpon>BlockingObjectsModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BlockingObjects\ThreadColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ClrRoots\ClrRootsCommand.cs" />
+    <Compile Include="Modules\ClrRoots\ClrRootInformation.cs" />
+    <Compile Include="Modules\ClrRoots\ClrRootsModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ClrRoots\ClrRootsModule.Designer.cs">
+      <DependentUpon>ClrRootsModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Delegates\DelegateTargetInformation.cs" />
+    <Compile Include="Modules\Delegates\DelegateInstanceInformation.cs" />
+    <Compile Include="Modules\Delegates\Instances\DelegateInstancesCommand.cs" />
+    <Compile Include="Modules\Delegates\Instances\DelegateInstancesModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Delegates\Instances\DelegateInstancesModule.Designer.cs">
+      <DependentUpon>DelegateInstancesModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Delegates\DelegateTypeInformation.cs" />
+    <Compile Include="Modules\Delegates\LoneTargetInformation.cs" />
+    <Compile Include="Modules\Delegates\LoneTargets\LoneTargetsModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Delegates\LoneTargets\LoneTargetsModule.Designer.cs">
+      <DependentUpon>LoneTargetsModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Delegates\LoneTargets\LoneTargetsCommand.cs" />
+    <Compile Include="Modules\Delegates\Targets\DelegateTargetsCommand.cs" />
+    <Compile Include="Modules\Delegates\Targets\DelegateTargetsModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Delegates\Targets\DelegateTargetsModule.Designer.cs">
+      <DependentUpon>DelegateTargetsModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Delegates\Types\DelegateTypesModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Delegates\Types\DelegateTypesModule.Designer.cs">
+      <DependentUpon>DelegateTypesModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Delegates\DelegatesAnalysis.cs" />
+    <Compile Include="Modules\Delegates\Types\DelegateTypesCommand.cs" />
+    <Compile Include="Modules\Disposables\DisposableAnalysis.cs" />
+    <Compile Include="Modules\Disposables\DisposableTypeInformation.cs" />
+    <Compile Include="Modules\Disposables\DisposableTypesCommand.cs" />
+    <Compile Include="Modules\Disposables\DisposableTypesModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Disposables\DisposableTypesModule.Designer.cs">
+      <DependentUpon>DisposableTypesModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\InstancesMixed\InstanceInformation.cs" />
+    <Compile Include="Modules\InstancesMixed\InstancesMixedModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\InstancesMixed\InstancesMixedModule.Designer.cs">
+      <DependentUpon>InstancesMixedModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Process\ProcessDumpedMessage.cs" />
+    <Compile Include="Modules\RootPath\RootPathAnalysis.cs" />
+    <Compile Include="Modules\RootPath\RootPathCommand.cs" />
+    <Compile Include="Modules\RootPath\RootPathInformation.cs" />
+    <Compile Include="Modules\RootPath\RootPathModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\RootPath\RootPathModule.Designer.cs">
+      <DependentUpon>RootPathModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Referers\ReferersAnalysis.cs" />
+    <Compile Include="Modules\Referers\ReferersCommand.cs" />
+    <Compile Include="Modules\Referers\ReferersInformation.cs" />
+    <Compile Include="Modules\Referers\ReferersModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Referers\ReferersModule.Designer.cs">
+      <DependentUpon>ReferersModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DumpDiff\DiffColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\Arrays\ArraysAnalysis.cs" />
+    <Compile Include="Modules\Arrays\ArraysInformation.cs" />
+    <Compile Include="Modules\Arrays\ArraysCommand.cs" />
+    <Compile Include="Modules\Arrays\ArraysModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Arrays\ArraysModule.Designer.cs">
+      <DependentUpon>ArraysModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Explorer\ExplorerCommand.cs" />
+    <Compile Include="Modules\Inspector\InspectorCommand.cs" />
+    <Compile Include="Modules\Inspector\InspectorModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Instances\InstanceVirtualSource.cs" />
+    <Compile Include="Modules\Strings\StringAnalysis.cs" />
+    <Compile Include="Modules\Strings\StringInformation.cs" />
+    <Compile Include="Modules\Strings\StringsCommand.cs" />
+    <Compile Include="Modules\Strings\StringsModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Strings\StringsModule.Designer.cs">
+      <DependentUpon>StringsModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ThreadException\ClrExceptionInformation.cs" />
+    <Compile Include="Modules\ThreadException\ThreadExceptionCommand.cs" />
+    <Compile Include="Modules\ThreadException\ThreadExceptionModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ThreadException\ThreadExceptionModule.Designer.cs">
+      <DependentUpon>ThreadExceptionModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\StackTrace\StackFrameExtensions.cs" />
+    <Compile Include="Modules\StackTrace\StackTraceCommand.cs" />
+    <Compile Include="Modules\StackTrace\StackFrameInformation.cs" />
+    <Compile Include="Modules\StackTrace\StackTraceModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\StackTrace\StackTraceModule.Designer.cs">
+      <DependentUpon>StackTraceModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Stack\StackInstanceInformation.cs" />
+    <Compile Include="Modules\Stack\StackCommand.cs" />
+    <Compile Include="Modules\Stack\StackModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Stack\StackModule.Designer.cs">
+      <DependentUpon>StackModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ThreadPool\ManagedWorkItemInformation.cs" />
+    <Compile Include="Modules\ThreadPool\NativeWorkItemInformation.cs" />
+    <Compile Include="Modules\ThreadPool\ThreadPoolCommand.cs" />
+    <Compile Include="Modules\ThreadPool\ThreadPoolInformation.cs" />
+    <Compile Include="Modules\ThreadPool\ThreadPoolModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ThreadPool\ThreadPoolModule.Designer.cs">
+      <DependentUpon>ThreadPoolModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Threads\ThreadsCommand.cs" />
+    <Compile Include="Modules\Threads\ThreadsInformation.cs" />
+    <Compile Include="Modules\Threads\ThreadsModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Threads\ThreadsModule.Designer.cs">
+      <DependentUpon>ThreadsModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Finalizer\FinalizerInformation.cs" />
+    <Compile Include="Modules\Finalizer\FinalizerCommand.cs" />
+    <Compile Include="Modules\Finalizer\FinalizerModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Finalizer\FinalizerModule.Designer.cs">
+      <DependentUpon>FinalizerModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Instances\FieldAccessor.cs" />
+    <Compile Include="Modules\Handles\HandlesCommand.cs" />
+    <Compile Include="Modules\Handles\HandleInformation.cs" />
+    <Compile Include="Modules\Handles\HandlesModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Handles\HandlesModule.Designer.cs">
+      <DependentUpon>HandlesModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Instances\TypeInstancesCommand.cs" />
+    <Compile Include="Modules\Instances\TypeInstancesModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Modules\ModuleInformation.cs" />
+    <Compile Include="Modules\Modules\ModuleCommand.cs" />
+    <Compile Include="Modules\Modules\ModuleModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Modules\ModuleModule.Designer.cs">
+      <DependentUpon>ModuleModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Regions\RegionInformation.cs" />
+    <Compile Include="Modules\Regions\RegionsCommand.cs" />
+    <Compile Include="Modules\Regions\RegionsModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Regions\RegionsModule.Designer.cs">
+      <DependentUpon>RegionsModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DumpDiff\DumpDiffCommand.cs" />
+    <Compile Include="Modules\DumpDiff\DumpDiffModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\DumpDiff\DumpDiffModule.Designer.cs">
+      <DependentUpon>DumpDiffModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Segments\SegmentInformation.cs" />
+    <Compile Include="Modules\Segments\SegmentsCommand.cs" />
+    <Compile Include="Modules\Segments\SegmentsModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Segments\SegmentsModule.Designer.cs">
+      <DependentUpon>SegmentsModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Workplace\MemoScopeWorkplace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\CodeTriggers\CodeTrigger.cs" />
+    <Compile Include="Core\Data\IAddressData.cs" />
+    <Compile Include="Core\UIClrDumpModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\UIClrDumpModule.Designer.cs">
+      <DependentUpon>UIClrDumpModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\ClrTypeStats.cs" />
+    <Compile Include="Core\Dac\AbstractDacFinder.cs" />
+    <Compile Include="Core\Dac\DacFinder32.cs" />
+    <Compile Include="Core\Dac\DacFinder64.cs" />
+    <Compile Include="Core\Dac\DacFinderFactory.cs" />
+    <Compile Include="Core\Data\ClrObject.cs" />
+    <Compile Include="Core\Helpers\ObjectListViewHelpers.cs" />
+    <Compile Include="Core\Helpers\TypeAlias.cs" />
+    <Compile Include="Core\Helpers\TypeHelpers.cs" />
+    <Compile Include="MemoScopeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemoScopeForm.Designer.cs">
+      <DependentUpon>MemoScopeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemoScopeSettings.cs" />
+    <Compile Include="Modules\About\AboutCommand.cs" />
+    <Compile Include="Modules\About\AboutModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\About\AboutModule.Designer.cs">
+      <DependentUpon>AboutModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Bookmarks\Bookmark.cs" />
+    <Compile Include="Modules\Bookmarks\BookmarkCommand.cs" />
+    <Compile Include="Modules\Bookmarks\BookmarkModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Bookmarks\BookmarkModule.Designer.cs">
+      <DependentUpon>BookmarkModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Bookmarks\BookmarkService.cs" />
+    <Compile Include="Modules\Bookmarks\DeleteBookmarkCommand.cs" />
+    <Compile Include="Modules\Bookmarks\AddBookmarkCommand.cs" />
+    <Compile Include="Modules\Bookmarks\BookmarkMessage.cs" />
+    <Compile Include="Modules\Explorer\AbstractDumpExplorerData.cs" />
+    <Compile Include="Modules\Explorer\DirectoryData.cs" />
+    <Compile Include="Modules\Explorer\ExplorerModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Explorer\ExplorerModule.Designer.cs">
+      <DependentUpon>ExplorerModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Explorer\FileData.cs" />
+    <Compile Include="Modules\Explorer\OpenDumpRequest.cs" />
+    <Compile Include="Core\Data\ClrDumpObject.cs" />
+    <Compile Include="Modules\InstanceDetails\FieldValueInformation.cs" />
+    <Compile Include="Modules\InstanceDetails\InstanceDetailsModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\InstanceDetails\InstanceDetailsModule.Designer.cs">
+      <DependentUpon>InstanceDetailsModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\InstanceDetails\InstanceDetailsCommand.cs" />
+    <Compile Include="Modules\InstanceDetails\ReferenceInformation.cs" />
+    <Compile Include="Modules\Instances\FieldNode.cs" />
+    <Compile Include="Modules\Instances\InstancesCommand.cs" />
+    <Compile Include="Modules\Instances\InstancesModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Instances\InstancesModule.Designer.cs">
+      <DependentUpon>InstancesModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Process\DumpRequest.cs" />
+    <Compile Include="Modules\Process\MemoScopeService .cs" />
+    <Compile Include="Modules\Process\ProcessCommand.cs" />
+    <Compile Include="Modules\Process\ProcessInfoValue.cs" />
+    <Compile Include="Modules\Process\ProcessInfoViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Process\ProcessInfoViewer.Designer.cs">
+      <DependentUpon>ProcessInfoViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Process\ProcessModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Process\ProcessModule.Designer.cs">
+      <DependentUpon>ProcessModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\CodeTriggers\CodeTriggersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\CodeTriggers\CodeTriggersControl.Designer.cs">
+      <DependentUpon>CodeTriggersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Process\ProcessWrapper.cs" />
+    <Compile Include="Modules\TypeDetails\AbstractTypeInformation.cs" />
+    <Compile Include="Core\Data\ClrDumpType.cs" />
+    <Compile Include="Modules\TypeDetails\DummyTypeInformation.cs" />
+    <Compile Include="Modules\TypeDetails\FieldInformation.cs" />
+    <Compile Include="Modules\TypeDetails\InterfaceInformation.cs" />
+    <Compile Include="Modules\TypeDetails\MethodInformation.cs" />
+    <Compile Include="Modules\TypeDetails\TypeDetailsCommand.cs" />
+    <Compile Include="Modules\TypeDetails\TypeDetailsModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\TypeDetails\TypeDetailsModule.Designer.cs">
+      <DependentUpon>TypeDetailsModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TypeDetails\TypeInformation.cs" />
+    <Compile Include="Modules\TypeDetails\TypeInformations.cs" />
+    <Compile Include="Core\Data\AddressList.cs" />
+    <Compile Include="Modules\TypeStats\TypeStatModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\TypeStats\TypeStatModule.Designer.cs">
+      <DependentUpon>TypeStatModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\ClrDump.cs" />
+    <Compile Include="Services\ClrDumpLoadedMessage.cs" />
+    <Compile Include="Services\DumpLoaderService.cs" />
+    <Compile Include="Core\SimpleTask.cs" />
+    <Compile Include="Core\SingleThreadWorker.cs" />
+    <Compile Include="Tools\RegexFilter\RegexFilterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\RegexFilter\RegexFilterControl.Designer.cs">
+      <DependentUpon>RegexFilterControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MemoScopeForm.resx">
+      <DependentUpon>MemoScopeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\About\AboutModule.resx">
+      <DependentUpon>AboutModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ArrayInstances\ArrayInstancesModule.resx">
+      <DependentUpon>ArrayInstancesModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BlockingObjects\BlockingObjectsModule.resx">
+      <DependentUpon>BlockingObjectsModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bookmarks\BookmarkModule.resx">
+      <DependentUpon>BookmarkModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Delegates\Instances\DelegateInstancesModule.resx">
+      <DependentUpon>DelegateInstancesModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Delegates\LoneTargets\LoneTargetsModule.resx">
+      <DependentUpon>LoneTargetsModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Delegates\Targets\DelegateTargetsModule.resx">
+      <DependentUpon>DelegateTargetsModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Delegates\Types\DelegateTypesModule.resx">
+      <DependentUpon>DelegateTypesModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Disposables\DisposableTypesModule.resx">
+      <DependentUpon>DisposableTypesModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\InstancesMixed\InstancesMixedModule.resx">
+      <DependentUpon>InstancesMixedModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\RootPath\RootPathModule.resx">
+      <DependentUpon>RootPathModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Referers\ReferersModule.resx">
+      <DependentUpon>ReferersModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Explorer\ExplorerModule.resx">
+      <DependentUpon>ExplorerModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ClrRoots\ClrRootsModule.resx">
+      <DependentUpon>ClrRootsModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Arrays\ArraysModule.resx">
+      <DependentUpon>ArraysModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Strings\StringsModule.resx">
+      <DependentUpon>StringsModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ThreadException\ThreadExceptionModule.resx">
+      <DependentUpon>ThreadExceptionModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\StackTrace\StackTraceModule.resx">
+      <DependentUpon>StackTraceModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Stack\StackModule.resx">
+      <DependentUpon>StackModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ThreadPool\ThreadPoolModule.resx">
+      <DependentUpon>ThreadPoolModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Threads\ThreadsModule.resx">
+      <DependentUpon>ThreadsModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Finalizer\FinalizerModule.resx">
+      <DependentUpon>FinalizerModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\InstanceDetails\InstanceDetailsModule.resx">
+      <DependentUpon>InstanceDetailsModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Instances\InstancesModule.resx">
+      <DependentUpon>InstancesModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Handles\HandlesModule.resx">
+      <DependentUpon>HandlesModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Process\ProcessInfoViewer.resx">
+      <DependentUpon>ProcessInfoViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Process\ProcessModule.resx">
+      <DependentUpon>ProcessModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Modules\ModuleModule.resx">
+      <DependentUpon>ModuleModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Regions\RegionsModule.resx">
+      <DependentUpon>RegionsModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DumpDiff\DumpDiffModule.resx">
+      <DependentUpon>DumpDiffModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Segments\SegmentsModule.resx">
+      <DependentUpon>SegmentsModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\CodeTriggers\CodeTriggersControl.resx">
+      <DependentUpon>CodeTriggersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TypeDetails\TypeDetailsModule.resx">
+      <DependentUpon>TypeDetailsModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TypeStats\TypeStatModule.resx">
+      <DependentUpon>TypeStatModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\RegexFilter\RegexFilterControl.resx">
+      <DependentUpon>RegexFilterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MemoScopeApi\MemoScopeApi.csproj">
+      <Project>{8363c100-7197-474e-a951-1402ab9e4d03}</Project>
+      <Name>MemoScopeApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\Large\action_log.png" />
+    <Content Include="Icons\Large\attributes_display.png" />
+    <Content Include="Icons\Large\award_star_add.png" />
+    <Content Include="Icons\Large\award_star_delete.png" />
+    <Content Include="Icons\Large\award_star_gold_blue.png" />
+    <Content Include="Icons\Large\blueprint.png" />
+    <Content Include="Icons\Large\bow.png" />
+    <Content Include="Icons\Large\broom.png" />
+    <Content Include="Icons\Large\candlestickchart.png" />
+    <Content Include="Icons\Large\chart_organisation.png" />
+    <Content Include="Icons\Large\class_module.png" />
+    <Content Include="Icons\Large\compile.png" />
+    <Content Include="Icons\Large\ddr_memory.png" />
+    <Content Include="Icons\Large\diagnostic_chart.png" />
+    <Content Include="Icons\Large\elements.png" />
+    <Content Include="Icons\Large\exclamation.png" />
+    <Content Include="Icons\Large\folders_explorer.png" />
+    <Content Include="Icons\Large\formatting_bottom_percent.png" />
+    <Content Include="Icons\Large\formatting_dublicate_value.png" />
+    <Content Include="Icons\Large\formatting_equal_to.png" />
+    <Content Include="Icons\Large\formatting_highlight_between.png" />
+    <Content Include="Icons\Large\geolocation_sight.png" />
+    <Content Include="Icons\Large\help.png" />
+    <Content Include="Icons\Large\lightning.png" />
+    <Content Include="Icons\Large\lock.png" />
+    <Content Include="Icons\Large\macro_show_all_actions.png" />
+    <Content Include="Icons\Large\microscope.png" />
+    <Content Include="Icons\Large\module.png" />
+    <Content Include="Icons\Large\molecule.png" />
+    <Content Include="Icons\Large\new_data.png" />
+    <None Include="Resources\arrow_refresh.png" />
+    <None Include="Icons\Large\outline_wight_gallery.png" />
+    <Content Include="Icons\Large\perfomance_analysis.png" />
+    <Content Include="Icons\Large\plugin_link.png" />
+    <Content Include="Icons\Large\processor.png" />
+    <Content Include="Icons\Large\recommended_summart_table.png" />
+    <Content Include="Icons\Large\recycle_bag.png" />
+    <Content Include="Icons\Large\red_line.png" />
+    <Content Include="Icons\Large\save_data.png" />
+    <Content Include="Icons\Large\scroll_pane_list.png" />
+    <Content Include="Icons\Large\subtotal.png" />
+    <Content Include="Icons\Large\table_lightning.png" />
+    <Content Include="Icons\Large\text_rotate.png" />
+    <Content Include="Icons\Logos\memoscope.svg" />
+    <Content Include="Icons\Logos\memoscope_logo.ico" />
+    <Content Include="Icons\Logos\memoscope_logo.png" />
+    <Content Include="Icons\Logos\memoscope_logo_16x16.png" />
+    <Content Include="Icons\Logos\memoscope_logo_32x32.png" />
+    <Content Include="Icons\Logos\Microscope_icon_%28black%29.png" />
+    <Content Include="Icons\Logos\Microscope_icon_%28black%29.svg" />
+    <Content Include="Icons\Large\anchor.png" />
+    <Content Include="Icons\Large\borders_accent.png" />
+    <Content Include="Icons\Large\legend.png" />
+    <Content Include="Icons\Small\accept_button.png" />
+    <Content Include="Icons\Small\action_log.png" />
+    <Content Include="Icons\Small\anchor.png" />
+    <Content Include="Icons\Small\application_double.png" />
+    <Content Include="Icons\Large\clock_go.png" />
+    <Content Include="Icons\Large\clock_stop.png" />
+    <Content Include="Icons\Small\application_view_list.png" />
+    <Content Include="Icons\Small\attributes_display.png" />
+    <Content Include="Icons\Small\award_star_gold_blue.png" />
+    <Content Include="Icons\Small\blueprint.png" />
+    <Content Include="Icons\Small\borders_accent.png" />
+    <Content Include="Icons\Small\broom.png" />
+    <Content Include="Icons\Small\candlestickchart.png" />
+    <Content Include="Icons\Small\chart_organisation.png" />
+    <Content Include="Icons\Small\class_module.png" />
+    <Content Include="Icons\Small\clock_go.png" />
+    <Content Include="Icons\Small\clock_stop.png" />
+    <Content Include="Icons\Small\color_management.png" />
+    <Content Include="Icons\Small\compile.png" />
+    <Content Include="Icons\Small\database_go.png" />
+    <Content Include="Icons\Small\database_green.png" />
+    <Content Include="Icons\Small\database_yellow.png" />
+    <Content Include="Icons\Small\ddr_memory.png" />
+    <Content Include="Icons\Small\diagnostic_chart.png" />
+    <Content Include="Icons\Small\elements.png" />
+    <Content Include="Icons\Small\exclamation.png" />
+    <Content Include="Icons\Small\file_extension_bin.png" />
+    <Content Include="Icons\Small\filter_clear.png" />
+    <Content Include="Icons\Small\filter_reapply.png" />
+    <Content Include="Icons\Small\folder.png" />
+    <Content Include="Icons\Small\folders_explorer.png" />
+    <Content Include="Icons\Small\folder_explore.png" />
+    <Content Include="Icons\Small\formatting_bottom_percent.png" />
+    <Content Include="Icons\Small\formatting_dublicate_value.png" />
+    <Content Include="Icons\Small\formatting_equal_to.png" />
+    <Content Include="Icons\Small\formatting_highlight_between.png" />
+    <Content Include="Icons\Small\hourglass.png" />
+    <Content Include="Icons\Small\legend.png" />
+    <Content Include="Icons\Small\lightning.png" />
+    <Content Include="Icons\Small\lock.png" />
+    <Content Include="Icons\Small\macro_show_all_actions.png" />
+    <Content Include="Icons\Small\microscope.png" />
+    <Content Include="Icons\Small\module.png" />
+    <Content Include="Icons\Small\molecule.png" />
+    <Content Include="Icons\Small\new_data.png" />
+    <Content Include="Icons\Small\outline_wight_gallery.png" />
+    <Content Include="Icons\Small\page_delete.png" />
+    <Content Include="Icons\Small\plugin_link.png" />
+    <Content Include="Icons\Small\processor.png" />
+    <Content Include="Icons\Small\recommended_summart_table.png" />
+    <Content Include="Icons\Small\recycle_bag.png" />
+    <Content Include="Icons\Small\red_line.png" />
+    <Content Include="Icons\Small\save_data.png" />
+    <Content Include="Icons\Small\scroll_pane_list.png" />
+    <Content Include="Icons\Small\help.png" />
+    <Content Include="Icons\Small\subtotal.png" />
+    <Content Include="Icons\Small\table_lightning.png" />
+    <Content Include="Icons\Small\text_rotate.png" />
+    <Content Include="Icons\Small\text_uppercase.png" />
+    <Content Include="libs\_x64\dbghelp.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libs\_x64\symsrv.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libs\_x86\dbghelp.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libs\_x86\symsrv.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="memoscope_logo.ico" />
+    <None Include="Resources\Memoscope.png.ico" />
+    <None Include="Resources\Memoscope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
